@@ -21,7 +21,7 @@ export class AccountController {
   @GrpcMethod(ACCOUNT_SERVICE_NAME, 'GetAccount')
   async getAccount(): Promise<GetAccountResponse> {
     return {
-      status: 201,
+      status: 200,
       error: [],
       account: {
         name: 'User 1',
