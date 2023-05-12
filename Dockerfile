@@ -30,10 +30,10 @@ USER node
 
 FROM node:20-alpine AS production
 
-ENV ACCOUNT_SERVICE_SERVER_HOST 0.0.0.0
-ENV ACCOUNT_SERVICE_PORT 50051
-ENV GRPC_TRACE all
-ENV GRPC_VERBOSITY debug
+ENV HOST 0.0.0.0
+ENV PORT 50051
+# ENV GRPC_TRACE all
+# ENV GRPC_VERBOSITY debug
 
 COPY --chown=node:node --from=build /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node --from=build /usr/src/app/dist ./dist
